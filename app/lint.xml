@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+  <issue id="UnusedResources">
+    <ignore regexp=".*R\.[layout].*" />
+    <ignore regexp=".*R\.drawable\.ic_launcher_.*" />
+  </issue>
+  <issue id="IconLauncherShape">
+    <ignore regexp=".*_background.png" />
+  </issue>
+</lint>

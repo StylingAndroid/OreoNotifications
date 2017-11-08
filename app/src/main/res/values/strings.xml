@@ -1,0 +1,17 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+  <string name="app_name">Oreo Notifications</string>
+  <string name="toggle_messages">Toggle Messages</string>
+
+  <string-array name="phrases"
+    tools:ignore="Typos">
+    <item>I will not buy this record, it is scratched.</item>
+    <item>My hovercraft is full of eels.</item>
+    <item>Do you want to come back to my place, bouncy bouncy?</item>
+    <item>If I said you had a beautiful body, would you hold it against me?</item>
+    <item>I am no longer infected.</item>
+    <item>You have beautiful thighs.</item>
+    <item>Drop your panties, Sir William, I cannot wait till lunchtime.</item>
+    <item>Please fondle my bum.</item>
+    <item>My nipples explode with delight.</item>
+  </string-array>
+</resources>
