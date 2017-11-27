@@ -8,8 +8,8 @@ fun <T> lazyFast(operation: () -> T): Lazy<T> = lazy(LazyThreadSafetyMode.NONE) 
 }
 
 fun Context.safeContext(): Context =
-        takeUnless { isDeviceProtectedStorage }?.apply {
-            applicationContext.let {
+        takeUnless { isDeviceProtectedStorage }?.let {
+            it.applicationContext.let {
                 ContextCompat.createDeviceProtectedStorageContext(it) ?: it
             }
         } ?: this
