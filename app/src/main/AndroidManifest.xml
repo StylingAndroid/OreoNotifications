@@ -3,6 +3,8 @@
   xmlns:tools="http://schemas.android.com/tools"
   package="com.stylingandroid.oreo.notifications">
 
+  <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+
   <application
     android:allowBackup="false"
     android:icon="@mipmap/ic_launcher"

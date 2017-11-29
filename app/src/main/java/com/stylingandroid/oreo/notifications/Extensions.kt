@@ -1,6 +1,7 @@
 package com.stylingandroid.oreo.notifications
 
 import android.content.Context
+import android.os.Build
 import android.support.v4.content.ContextCompat
 
 fun <T> lazyFast(operation: () -> T): Lazy<T> = lazy(LazyThreadSafetyMode.NONE) {
@@ -13,3 +14,9 @@ fun Context.safeContext(): Context =
                 ContextCompat.createDeviceProtectedStorageContext(it) ?: it
             }
         } ?: this
+
+fun ifAtLeast(version: Int, function: () -> Unit) {
+    if (Build.VERSION.SDK_INT >= version) {
+        function()
+    }
+}

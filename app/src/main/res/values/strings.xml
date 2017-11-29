@@ -1,6 +1,12 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
   <string name="app_name">Oreo Notifications</string>
   <string name="toggle_messages">Toggle Messages</string>
+  <string name="important_channel_name">Important Channel</string>
+  <string name="important_channel_description">This channel is for high priority messages</string>
+  <string name="normal_channel_name">Normal Channel</string>
+  <string name="normal_channel_description">This channel is for normal priority messages</string>
+  <string name="low_channel_name">Low Channel</string>
+  <string name="low_channel_description">This channel is for low priority messages</string>
 
   <string-array name="phrases"
     tools:ignore="Typos">
