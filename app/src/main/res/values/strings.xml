@@ -7,6 +7,8 @@
   <string name="normal_channel_description">This channel is for normal priority messages</string>
   <string name="low_channel_name">Low Channel</string>
   <string name="low_channel_description">This channel is for low priority messages</string>
+  <string name="second_activity">Second Activity</string>
+  <string name="go_to_second_activity">Go to Second Activity</string>
 
   <string-array name="phrases"
     tools:ignore="Typos">

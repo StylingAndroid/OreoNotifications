@@ -21,6 +21,14 @@
       </intent-filter>
     </activity>
 
+    <activity
+      android:name=".SecondActivity"
+      android:parentActivityName=".MainActivity">
+      <meta-data
+        android:name="android.support.PARENT_ACTIVITY"
+        android:value=".MainActivity" />
+    </activity>
+
     <service
       android:name=".messenger.MessengerService"
       android:directBootAware="true"
@@ -30,7 +38,6 @@
         <action android:name="com.google.android.gms.gcm.ACTION_TASK_READY" />
       </intent-filter>
     </service>
-
     <service
       android:name=".MessengerTileService"
       android:icon="@drawable/ic_message"

@@ -4,14 +4,18 @@ import android.annotation.TargetApi
 import android.app.Notification
 import android.app.NotificationChannel
 import android.app.NotificationManager
+import android.app.PendingIntent
 import android.content.Context
+import android.content.Intent
 import android.os.Build
 import android.support.v4.app.NotificationCompat
 import android.support.v4.app.NotificationManagerCompat
+import android.support.v4.app.TaskStackBuilder
 import com.stylingandroid.oreo.notifications.R
+import com.stylingandroid.oreo.notifications.SecondActivity
 import com.stylingandroid.oreo.notifications.bindSharedPreference
 import com.stylingandroid.oreo.notifications.safeContext
-import java.util.Random
+import java.util.*
 
 class NotificationBuilder(
         private val context: Context,
@@ -67,6 +71,7 @@ class NotificationBuilder(
                 setSmallIcon(getIconId(channelId))
                 setShowWhen(true)
                 setGroup(GROUP_KEY)
+                setContentIntent(getContentIntent())
                 build()
             }
 
@@ -75,6 +80,18 @@ class NotificationBuilder(
                 IMPORTANT_CHANNEL_ID -> R.drawable.ic_important
                 LOW_CHANNEL_ID -> R.drawable.ic_low
                 else -> R.drawable.ic_message
+            }
+
+    private fun getContentIntent(): PendingIntent =
+            TaskStackBuilder.create(context).run {
+                addParentStack(SecondActivity::class.java)
+                addNextIntent(createIntent(SecondActivity::class.java))
+                getPendingIntent(0, PendingIntent.FLAG_UPDATE_CURRENT) as PendingIntent
+            }
+
+    private fun createIntent(cls: Class<*>): Intent =
+            Intent(context, cls).apply {
+                flags = Intent.FLAG_ACTIVITY_SINGLE_TOP
             }
 
     private fun buildSummary(message: Message, channelId: String): Notification =
